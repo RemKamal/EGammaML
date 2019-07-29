@@ -1,0 +1,6 @@
+. /cvmfs/sft.cern.ch/lcg/app/releases/ROOT/6.16.00/x86_64-centos7-gcc48-opt/bin/thisroot.sh
+virtualenv virtualenv_egamma_1
+source /afs/cern.ch/work/r/rkamalie/public/Environments/egamma1/EGammaML/virtualenv_egamma_1/bin/activate
+
+
+deactivate

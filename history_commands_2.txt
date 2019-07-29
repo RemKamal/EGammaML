@@ -1,0 +1,1000 @@
+ 1186  cd ../../
+ 1187  lt
+ 1188  lt *py
+ 1189  cd -
+ 1190  lt
+ 1191  lt *py
+ 1192  cd ee_350/
+ 1193  lt
+ 1194  cd ../copy/
+ 1195  lt
+ 1196  cd ../test8feb/
+ 1197  lt
+ 1198  cp /afs/cern.ch/work/r/rkamalie/private/CMSSW_8_1_0/src/HiggsAnalysis/CombinedLimit/test/mytest/jan5/jan_work/tests/combinedCards_350/ee_900/900/plotCardshapes_postfit1_2.py
+ 1199  cp /afs/cern.ch/work/r/rkamalie/private/CMSSW_8_1_0/src/HiggsAnalysis/CombinedLimit/test/mytest/jan5/jan_work/tests/combinedCards_350/ee_900/900/plotCardshapes_postfit1_2.py .
+ 1200  enw plotCardshapes_postfit1_2.py
+ 1201  python /afs/cern.ch/work/r/rkamalie/private/CMSSW_8_1_0/src/HiggsAnalysis/CombinedLimit/test/mytest/jan5/jan_work/tests/combinedCards_350/ee_900/900/plotCardshapes_postfit1_2.py
+ 1202  python plotCardshapes_postfit1_2.py 
+ 1203  lt
+ 1204  cp plotCardshapes_postfit1_2.py plotCardshapes_postfit1_2_needFix.py
+ 1205  cp plotCardshapes_postfit1_2_needFix.py plotCardshapes_postfit1_3.py  ~/workspace/private/masterCode/
+ 1206  lt
+ 1207  python plotCardshapes_postfit1_2.py 
+ 1208  enw plotCardshapes_postfit1_3.py 
+ 1209  lt *root
+ 1210  lt *CRDY*root
+ 1211  lt *CRDY*input*root
+ 1212  lt *CRDY_*input*root
+ 1213  lt *CRDY.input*root
+ 1214  enw plotCardshapes_postfit1_3.py 
+ 1215  grep -r "var" .
+ 1216  cdws
+ 1217  lt
+ 1218  mkdir 8feb2018
+ 1219  cd 8feb2018/
+ 1220  git clone https://github.com/cms-analysis/HiggsAnalysis-CombinedLimit.git HiggsAnalysis/CombinedLimit
+ 1221  cd HiggsAnalysis/CombinedLimit
+ 1222  source env_standalone.sh 
+ 1223  make -j 8; make # second make fixes compilation error of first
+ 1224  cd ../../
+ 1225  lt
+ 1226  rm -rf *
+ 1227  lt
+ 1228  rm -rf HiggsAnalysis/
+ 1229  lt
+ 1230  exit
+ 1231  cdmva 
+ 1232  cd crab
+ 1233  docrab 
+ 1234  dovoms 
+ 1235  lt
+ 1236  crab resubmit -d crab_projects_mar2_1/crab_HH_V25_Feb_bbtautau_650/
+ 1237  cdvhbb 
+ 1238  cd crab
+ 1239  docrab 
+ 1240  dovoms 
+ 1241  crab resubmit -d crab_projects_mar2_1/crab_HH_V25_Feb_bbtautau_650/
+ 1242  exit
+ 1243  cdmva 
+ 1244  exit
+ 1245  cdmva 
+ 1246  lt
+ 1247  cd analysis_mar16_btagMedium_eles_total_SR_minitrees_inpb_wBR
+ 1248  lt
+ 1249  lt dataset/
+ 1250  lt dataset/weights/
+ 1251  lt cr*
+ 1252  lt pro*
+ 1253  exit
+ 1254  history 
+ 1255  exit
+ 1256  cdtemp 
+ 1257  lt
+ 1258  cd ../ && lt
+ 1259  cd march30_forLimits/
+ 1260  lt
+ 1261  cd copy_combinedCards_300/
+ 1262  lt
+ 1263  cd combinedCards_300/
+ 1264  lt
+ 1265  lt *json
+ 1266  enw collectGoodness_AD.json
+ 1267  lt
+ 1268  lt *9.root
+ 1269  -rw-r--r--. 1 rkamalie zh   6710 Apr  4 15:59 higgsCombine.AD.GoodnessOfFit.
+ 1270  lt higgsCombine.AD.GoodnessOfFit.
+ 1271  lt *higgsCombine.AD.GoodnessOfFit.
+ 1272  lt *300.root
+ 1273  root -l higgsCombine.AD.GoodnessOfFit.mH300.root 
+ 1274  pwd
+ 1275  exit
+ 1276  cdmva 
+ 1277  nohup python runSimpleAn_v18_minitrees_indev_v1_eles_copy.py  -i samples20May2018  -j data/new_toMakeDataCard_samples_1pb_eles_BGrav.json -w analysis_May23_VTC_eles_BGrav_total_SR_minitrees_inpb_wBR -r SR -n 32 -t SaveTrees --channel2run 1 &> log_May23_VTC_eles_BGrav_total_SR_minitrees_inpb_wBR.txt&
+ 1278  exit
+ 1279  cdvhbb 
+ 1280  lt
+ 1281  cd Loop_standard_10k_bbZZBG900
+ 1282  lt
+ 1283  root - tree.root 
+ 1284  root -l tree.root 
+ 1285  lt
+ 1286  cd ../Loop_standard_10k_bbZZBG300
+ 1287  root -l tree.root 
+ 1288  cd ../
+ 1289  lt
+ 1290  cdtemp 
+ 1291  lt
+ 1292  cd ../
+ 1293  lt
+ 1294  cd may28
+ 1295  lt
+ 1296  enw makePlotsAndRebin.py 
+ 1297  cd ../
+ 1298  lt
+ 1299  april24
+ 1300  lt
+ 1301  cd april24
+ 1302  lt
+ 1303  lt *py
+ 1304  cd april24_muons_900
+ 1305  lt
+ 1306  cd ../
+ 1307  lt
+ 1308  enw putTogetherHists_makePostfitRoots_v3.py
+ 1309  cd ../may28
+ 1310  lt
+ 1311  enw makePlotsAndRebin.py 
+ 1312  lt
+ 1313  enw makePlotsAndRebin.py 
+ 1314  enw putTogetherHists_makePostfitRoots_v3.py 
+ 1315  python  makePlotsAndRebin.py 
+ 1316  lt
+ 1317  cd may28_eles_900/
+ 1318  lt
+ 1319  lt hhMt_ee_CRDY.input.root
+ 1320  lt hhMt_ee_*.input.root
+ 1321  lt hhMt_ee_*root
+ 1322  lt hhMt_*root
+ 1323  lt hhMt_*SR*root
+ 1324  lt hhMt_*CRDY**root
+ 1325  lt hhMt_*CRDY*root
+ 1326  lt hhMt_*CRTT*root
+ 1327  cd ../
+ 1328  rm ma*muons*
+ 1329  rm -rf ma*muons*
+ 1330  lt
+ 1331  enw putTogetherHists_makePostfitRoots_v3.py 
+ 1332  cd -
+ 1333  python putTogetherHists_makePostfitRoots_v3.py 
+ 1334  python putTogetherHists_makePostfitRoots_v3.py --rebin 0
+ 1335  lt hh*
+ 1336  enw putTogetherHists_makePostfitRoots_v3.py 
+ 1337  cd ../
+ 1338  enw putTogetherHists_makePostfitRoots_v3.py 
+ 1339  python  makePlotsAndRebin.py 
+ 1340  cd -
+ 1341  lt
+ 1342  lt fit*
+ 1343  lt copy_dataCard_CRDY_hhMt.root
+ 1344  lt fitDiagnostics_all.root
+ 1345  cd -
+ 1346  enw putTogetherHists_makePostfitRoots_v3.py
+ 1347  python  makePlotsAndRebin.py 
+ 1348  lt
+ 1349  cd -
+ 1350  lt
+ 1351  lt fit*
+ 1352  lt log*
+ 1353  enw log_fit_all_ee.txt
+ 1354  enw log_fit_all_asymptoticee.txt 
+ 1355  display hhMt_ee_SR_prefit_plot_may8.png &
+ 1356  display bdt_response_ee_SR_FullPostfit_plot_may8.png &
+ 1357  enw log_fit_all_asymptoticee.txt 
+ 1358  cd ../
+ 1359  lt
+ 1360  lt ../
+ 1361  enw makePlotsAndRebin.py
+ 1362  cd ../
+ 1363  mv may28 study_may28
+ 1364  cd study_may28/
+ 1365  lt
+ 1366  cd ../
+ 1367  pwd
+ 1368  lt
+ 1369  mkdir may28
+ 1370  mv may28_eles_900 may28
+ 1371  cd study_may28/
+ 1372  mkdir 1
+ 1373  mkdir 2
+ 1374  mkdir 5
+ 1375  mkdir 10
+ 1376  mkdir 15
+ 1377  mkdir 20
+ 1378  cd ../
+ 1379  cp -r cd -
+ 1380  lt
+ 1381  cd study_
+ 1382  cd study_may28/
+ 1383  lt
+ 1384  rm -rf may28_eles_900/
+ 1385  enw makePlotsAndRebin.py
+ 1386  lt
+ 1387  mkdir -p 1/may28_eles_900
+ 1388  mkdir -p 2/may28_eles_900
+ 1389  mkdir -p 5/may28_eles_900
+ 1390  mkdir -p 10/may28_eles_900
+ 1391  mkdir -p 15/may28_eles_900
+ 1392  mkdir -p 20/may28_eles_900
+ 1393  enw makePlotsAndRebin.py
+ 1394  python makePlotsAndRebin.py 
+ 1395  enw makePlotsAndRebin.py
+ 1396  python makePlotsAndRebin.py 
+ 1397  lt ../may28/may28_eles_900/hhMt_ee_*input.root
+ 1398  enw makePlotsAndRebin.py
+ 1399  python makePlotsAndRebin.py 
+ 1400  enw makePlotsAndRebin.py
+ 1401  python makePlotsAndRebin.py 
+ 1402  enw makePlotsAndRebin.py
+ 1403  python makePlotsAndRebin.py 
+ 1404  lt
+ 1405  lt 1
+ 1406  rm -rf 1
+ 1407  rm -rf 2
+ 1408  rm -rf 3
+ 1409  rm -rf 5
+ 1410  rm -rf 10
+ 1411  rm -rf 15
+ 1412  rm -rf 20
+ 1413  lt
+ 1414  python makePlotsAndRebin.py 
+ 1415  enw makePlotsAndRebin.py 
+ 1416  python makePlotsAndRebin.py 
+ 1417  enw makePlotsAndRebin.py 
+ 1418  python makePlotsAndRebin.py 
+ 1419  lt
+ 1420  lt 5
+ 1421  lt
+ 1422  python makePlotsAndRebin.py 
+ 1423  enw makePlotsAndRebin.py 
+ 1424  python makePlotsAndRebin.py 
+ 1425  enw makePlotsAndRebin.py 
+ 1426  python makePlotsAndRebin.py 
+ 1427  enw makePlotsAndRebin.py 
+ 1428  python makePlotsAndRebin.py 
+ 1429  enw makePlotsAndRebin.py 
+ 1430  python makePlotsAndRebin.py 
+ 1431  lt
+ 1432  cd 1
+ 1433  lt
+ 1434  cd may28_eles_900/
+ 1435  lt
+ 1436  display hhMt_ee_SR_FullPostfit_plot_may8.png &
+ 1437  lt log*fit*
+ 1438  lt log*fit*as*
+ 1439  enw  log*fit*as*
+ 1440  cd ../../2/may28_eles_900/
+ 1441  display hhMt_ee_SR_FullPostfit_plot_may8.png &
+ 1442  cd ../../5/may28_eles_900/
+ 1443  cd -
+ 1444  enw  log*fit*as*
+ 1445  cd -
+ 1446  display hhMt_ee_SR_FullPostfit_plot_may8.png &
+ 1447  enw  log*fit*as*
+ 1448  cd ../../10/may28_eles_900/
+ 1449  display hhMt_ee_SR_FullPostfit_plot_may8.png &
+ 1450  cd ../../15/may28_eles_900/
+ 1451  display hhMt_ee_SR_FullPostfit_plot_may8.png &
+ 1452  cd ../../20/may28_eles_900/
+ 1453  display hhMt_ee_SR_FullPostfit_plot_may8.png &
+ 1454  enw putTogetherHists_makePostfitRoots_v3.py 
+ 1455  display hhMt_ee_SR_FullPostfit_plot_may8.png &
+ 1456  cd ../../
+ 1457  lt
+ 1458  cp *py ~/workspace/private/masterCode/
+ 1459  lt *py
+ 1460  lt
+ 1461  enw makePlotsAndRebin.py
+ 1462  enw putTogetherHists_makePostfitRoots_v3.py
+ 1463  enw makePlotsAndRebin.py
+ 1464  lt *py
+ 1465  enw putTogetherHists_makePostfitRoots_v3.py
+ 1466  enw makePlotsAndRebin.py
+ 1467  cdMaster 
+ 1468  enw modifyAndPutTogetherHistsInRoots.py 
+ 1469  cd -
+ 1470  lt
+ 1471  enw makePlotsAndRebin.p
+ 1472  display 2/may28_eles_900/hhMt_ee_SR_FullPostfit_plot_may8.png &
+ 1473  display 5/may28_eles_900/hhMt_ee_SR_FullPostfit_plot_may8.png &
+ 1474  enw makePlotsAndRebin.py
+ 1475  enw putTogetherHists_makePostfitRoots_v3.py
+ 1476  cp *py ~/workspace/private/masterCode/
+ 1477  python makePlotsAndRebin.py 
+ 1478  lt
+ 1479  cd 1/may28_eles_900/
+ 1480  enw putTogetherHists_makePostfitRoots_v3.py
+ 1481  cd ../
+ 1482  display 1/may28_eles_900/hhMt_ee_SR_FullPostfit_plot_may8.png &
+ 1483  cd ../
+ 1484  display 1/may28_eles_900/hhMt_ee_SR_FullPostfit_plot_may8.png &
+ 1485  display 2/may28_eles_900/hhMt_ee_SR_FullPostfit_plot_may8.png &
+ 1486  display 5/may28_eles_900/hhMt_ee_SR_FullPostfit_plot_may8.png &
+ 1487  display 10/may28_eles_900/hhMt_ee_SR_FullPostfit_plot_may8.png &
+ 1488  display 15/may28_eles_900/hhMt_ee_SR_FullPostfit_plot_may8.png &
+ 1489  cd 5/may28_eles_900/
+ 1490  enw log_fit_all_asymptoticee.txt 
+ 1491  cd ../../10/may28_eles_900/
+ 1492  enw log_fit_all_asymptoticee.txt 
+ 1493  cd ../../15/may28_eles_900/
+ 1494  enw log_fit_all_asymptoticee.txt 
+ 1495  cdvhbb 
+ 1496  lt
+ 1497  enw copyFilesForPlots_v2.py
+ 1498  pythin copyFilesForPlots_v2.py
+ 1499  python copyFilesForPlots_v2.py
+ 1500  lt
+ 1501  cdtemp 
+ 1502  cd ../
+ 1503  lt
+ 1504  cd may29
+ 1505  lt
+ 1506  exit
+ 1507  cdmv
+ 1508  exit
+ 1509  cdeos
+ 1510  cdws
+ 1511  cd HIG-17-008/notes/HIG-17-008/
+ 1512  lt
+ 1513  tdrenv 
+ 1514  cd trunk/
+ 1515  lt
+ 1516  ../../tdr --style=pas b HIG-17-008
+ 1517  evince /afs/cern.ch/work/r/rkamalie/private/HIG-17-008/notes/tmp/HIG-17-008_temp.pdf &
+ 1518  cdws
+ 1519  svn co -N svn+ssh://svn.cern.ch/reps/tdr2
+ 1520  lt
+ 1521  rm -ed tdr
+ 1522  rm -rf tdr
+ 1523  asvn co -N svn+ssh://svn.cern.ch/reps/tdr2
+ 1524  svn co -N svn+ssh://svn.cern.ch/reps/tdr2 AN-16-444
+ 1525  cd AN-16-444
+ 1526  svn update utils
+ 1527  svn update -N notes
+ 1528  svn update notes/AN-16-444
+ 1529  tdrenv 
+ 1530  tdr --style=an b AN-16-444
+ 1531  evince /afs/cern.ch/work/r/rkamalie/private/myDir/notes/tmp/AN-16-444_temp.pdf &
+ 1532  cdws
+ 1533  svn co -N svn+ssh://svn.cern.ch/reps/tdr2 AN-16-430
+ 1534  cd AN-16-430
+ 1535  svn update utils
+ 1536  svn update -N notes
+ 1537  svn update notes/AN-16-430
+ 1538  tdrenv 
+ 1539  tdr --style=an b AN-16-430
+ 1540  evince /afs/cern.ch/work/r/rkamalie/private/myDir/notes/tmp/AN-16-430_temp.pdf &
+ 1541  eval `notes/tdr runtime -sh`
+ 1542  tdr --style=an b AN-16-430
+ 1543  evince /afs/cern.ch/work/r/rkamalie/private/AN-16-430/notes/tmp/AN-16-430_temp.pdf &
+ 1544  cdws
+ 1545  lt
+ 1546  cd Combine_april8
+ 1547  lt
+ 1548  cd ../
+ 1549  cd
+ 1550  lt
+ 1551  cdp
+ 1552  lt
+ 1553  cd ../
+ 1554  lt
+ 1555  cdws
+ 1556  lt
+ 1557  cd old_DataCards_HIG-17-032
+ 1558  lt
+ 1559  cd ../
+ 1560  cd -
+ 1561  enw README 
+ 1562  enw .svn/
+ 1563  cdws
+ 1564  pwd
+ 1565  lt
+ 1566  cd metWorkingOnBulkGrav_Aug20
+ 1567  lt
+ 1568  cd ../
+ 1569  cd old_DataCards_HIG-17-032/
+ 1570  lt
+ 1571  cd low_bdt_training/
+ 1572  lt
+ 1573  cd ../
+ 1574  lt
+ 1575  cd ../
+ 1576  lt
+ 1577  cd metWorkingOnBulkGrav_Aug20
+ 1578  lt
+ 1579  cd combinedCards_
+ 1580  cd combinedCards_900/
+ 1581  lt
+ 1582  cd ../
+ 1583  cd old_DataCards_HIG-17-032/
+ 1584  cd low_bdt_training/
+ 1585  lt
+ 1586  cd combinedCards_300/
+ 1587  lt
+ 1588  cd ../../me
+ 1589  cd ../../
+ 1590  cd ../
+ 1591  lt
+ 1592  cd metWorkingOnRadion_Aug20
+ 1593  lt
+ 1594  cd combinedCards_700
+ 1595  lt
+ 1596  cd ../
+ 1597  find . -name "hi*root" -print0 -exec rm {} \;
+ 1598  rm *{txt,py,root,py~,pdf}
+ 1599  lt
+ 1600  rm *pyc
+ 1601  lt
+ 1602  rm -rf Jun*
+ 1603  rm -rf limits_*
+ 1604  lt
+ 1605  rm -rf tes*
+ 1606  lt
+ 1607  lt combinedCards_900/
+ 1608  enw combinedCards_900/comb_tot_nominalCombination_M900_mc.txt
+ 1609  lt
+ 1610  lt combinedCards_900/
+ 1611  lt
+ 1612  lt *
+ 1613  lt combinedCards_900/
+ 1614  find . -name "log*" -print0 -exec rm {} \;
+ 1615  lt *
+ 1616  enw combinedCards_900/combine_logger.out
+ 1617  find . -name "*logger*" -print0 -exec rm {} \;
+ 1618  lt *
+ 1619  enw combinedCards_700/dataCard_hhMt_ee.txt
+ 1620  enw combinedCards_700/comb_tot_nominalCombination_M700_mc.txt 
+ 1621  find . -name "*data*" -print0 -exec rm {} \;
+ 1622  lt *
+ 1623  cd ../
+ 1624  lt
+ 1625  mv metWorkingOn* HIG-17-032/
+ 1626  cd HIG-17-032/
+ 1627  lt
+ 1628  svn add metWorkingOnBulkGrav_Aug20
+ 1629  find . -name "*afs*" -print0 -exec rm {} \;
+ 1630  lt
+ 1631  mv metWorkingOnRadion_Aug20 Radion
+ 1632  mv metWorkingOnBulkGrav_Aug20/ Graviton
+ 1633  svn add *on
+ 1634  svn cleanup
+ 1635  lt
+ 1636  svn add Radion/
+ 1637  svn add Graviton/
+ 1638  svn cleanup
+ 1639  svn add Graviton/
+ 1640  lt
+ 1641  svn info 
+ 1642  lt
+ 1643  svn add Graviton/
+ 1644  cd ../
+ 1645  cd -
+ 1646  svn cleanup
+ 1647  svn status 
+ 1648  asvn --force delete met*
+ 1649  svn --force delete met*
+ 1650  svn status 
+ 1651  cp -r Graviton/ ../
+ 1652  svn rm Graviton/
+ 1653  svn rm --force Graviton/
+ 1654  svn cleanup
+ 1655  rm -rf Graviton/
+ 1656  lt
+ 1657  svn status 
+ 1658  svn add metWorkingOnBulkGrav_Aug20
+ 1659  mkdir metWorkingOnBulkGrav_Aug20
+ 1660  svn add metWorkingOnBulkGrav_Aug20
+ 1661  svn rm  metWorkingOnBulkGrav_Aug20
+ 1662  svn remove  metWorkingOnBulkGrav_Aug20
+ 1663  svn status 
+ 1664  lt
+ 1665  rm -rf metWorkingOnBulkGrav_Aug20
+ 1666  lt
+ 1667  svn add Graviton
+ 1668  cp -r ../Graviton/ .
+ 1669  svn add Graviton
+ 1670  svn cleanup
+ 1671  svn add Graviton
+ 1672  cd ../
+ 1673  svn cleanup
+ 1674  svn status 
+ 1675  cd -
+ 1676  lt
+ 1677  svn cleanup
+ 1678  rm -rf Graviton/
+ 1679  svn cleanup
+ 1680  svn status 
+ 1681  svn mkdir Graviton
+ 1682  cp -r ../Graviton/ .
+ 1683  lt
+ 1684  lt Graviton/
+ 1685  svn status 
+ 1686  svn add Graviton/*
+ 1687  svn rm Graviton/
+ 1688  svn rm --force Graviton/
+ 1689  svn cleanup
+ 1690  lt
+ 1691  rm -rf Graviton/
+ 1692  svn cleanup
+ 1693  svn status 
+ 1694  svn mkdir Graviton
+ 1695  acp -r ../Graviton/* Graviton
+ 1696  lt
+ 1697  mkdir Graviton
+ 1698  acp -r ../Graviton/* Graviton
+ 1699  cp -r ../Graviton/* Graviton
+ 1700  svn status 
+ 1701  svn add Graviton/
+ 1702  svn add Graviton/*
+ 1703  lt
+ 1704  lt Graviton/
+ 1705  svn remove Graviton/
+ 1706  rm -rf Graviton/
+ 1707  svn cleanup
+ 1708  lt
+ 1709  rm -rf low_bdt_training/
+ 1710  rm -rf hi*
+ 1711  exit
+ 1712  cdws
+ 1713  lt
+ 1714  cd HIG-17-032/
+ 1715  lt
+ 1716  svn info 
+ 1717  svn status 
+ 1718  svn mkdir Graviton
+ 1719  svn --force delete Graviton
+ 1720  svn --force delete met*
+ 1721  svn status 
+ 1722  svn cleanup
+ 1723  svn status 
+ 1724  svn mkdir Graviton
+ 1725  cp -r ../Graviton/ .
+ 1726  cd ../Graviton/
+ 1727  find . -name "*svn*" -print0 -exec rm {} \;
+ 1728  y
+ 1729  cd -
+ 1730  cp -r ../Graviton/ .
+ 1731  svn add Graviton/
+ 1732  svn cleanup
+ 1733  lt
+ 1734  svn status 
+ 1735  svn add Graviton/*
+ 1736  svn add Graviton/*/*
+ 1737  svn commit -m "radion and graviton"
+ 1738  svn mkdir metWorkingOnBulkGrav_Aug20
+ 1739  lt metWorkingOnBulkGrav_Aug20
+ 1740  lt
+ 1741  find . -name 'lock' -exec rm -v {} \;
+ 1742  svn add Graviton/
+ 1743  svn add Graviton/*
+ 1744  svn rm metWorkingOnBulkGrav_Aug20
+ 1745  svn rm metWorkingO*
+ 1746  svn status 
+ 1747  cd ../
+ 1748  cd Graviton/
+ 1749  find . -name 'lock' -exec rm -v {} \;
+ 1750  find . -name '*svn*' -exec rm -v {} \;
+ 1751  y
+ 1752  cd ../
+ 1753  cp -r Graviton/ HIG-17-032/ 
+ 1754  cd rkamalie@lxplus027:~/workspace/private$ cp -r Graviton/ HIG-17-032/ 
+ 1755  cd  HIG-17-032/ 
+ 1756  lt
+ 1757  svn status 
+ 1758  svn list
+ 1759  cp -r Radion/ ../
+ 1760  svn revert 
+ 1761  lt
+ 1762  svn add Radion/
+ 1763  svn add Graviton/
+ 1764  svn status 
+ 1765  svn rm Graviton/
+ 1766  svn --force delete Graviton/
+ 1767  lt
+ 1768  svn status 
+ 1769  svn mkdir Graviton
+ 1770  cp -R ../Graviton/ .
+ 1771  svn status 
+ 1772  mkdir -p Graviton/
+ 1773  cp -R ../Graviton/ .
+ 1774  svn add Graviton/
+ 1775  enw   ./Graviton/.svn/entries
+ 1776  cp -fR ../Graviton/ .
+ 1777  svn add Graviton/
+ 1778  svn add Graviton/*
+ 1779  svn status 
+ 1780  svn add Graviton/combinedCards_650/
+ 1781  cp -rf ../Graviton/combinedCards_650 ./Graviton/
+ 1782  svn add Graviton/combinedCards_650/
+ 1783  svn add Graviton/combinedCards_650/*
+ 1784  svn status 
+ 1785  svn commit -m "graviton and radion"
+ 1786  svn rm Graviton/combinedCards_260/.__afs525C
+ 1787  svn commit -m "graviton and radion"
+ 1788  svn status 
+ 1789  exit
+ 1790  cdvhbb 
+ 1791  lt runS*
+ 1792  enw  runSimpleAn_v18_minitrees_indev_v2_VTC_muons_July2_met100.py
+ 1793  cdpas
+ 1794  cd figures/
+ 1795  lt
+ 1796  cdwww 
+ 1797  cd forThesis/
+ 1798  mkdir for_approval
+ 1799  cp index.php  for_approval/
+ 1800  cd ~/workspace/private/myPAS/HIG-17-032/notes/HIG-17-032/trunk/figures
+ 1801  cp -r limitHH_Sep24* hhMt_*_SR_FullPostfit_plot_sept24_*.pdf ~/www/forThesis/for_approval/
+ 1802  cp -r limitHH_Sep24* hhMt_*_FullPostfit_plot_sept24_*.pdf ~/www/forThesis/for_approval/
+ 1803  cdws
+ 1804  lt
+ 1805  cd myDir/notes/AN-17-198/trunk/
+ 1806  lt
+ 1807  cd figures/
+ 1808  lt
+ 1809  lt bd*
+ 1810  lt bd*png
+ 1811  display bdt_mm.png&
+ 1812  lt *bd*png
+ 1813  lt *bd*
+ 1814  cd ../
+ 1815  lt
+ 1816  enw mva.tex 
+ 1817  lt 
+ 1818  cd  figures/
+ 1819  lt
+ 1820  cd mm_900_july20
+ 1821  lt
+ 1822  cd ../
+ 1823  lt
+ 1824  cp {mm,ee}_{low,high}.png ~/www/forThesis/for_approval/
+ 1825  exit
+ 1826  cdwww
+ 1827  lt
+ 1828  mkdir forHiggsExoWorkshop
+ 1829  cp index.php  forHiggsExoWorkshop/
+ 1830  cd forHiggsExoWorkshop/
+ 1831  pwd
+ 1832  exit
+ 1833  lt
+ 1834  rm 30Nov2018_HigsExoWorkshop_Rami_v2.pdf 
+ 1835  cd 
+ 1836  pwd
+ 1837  exit
+ 1838  cdtdr 
+ 1839  lt
+ 1840  enw AN-17-198.tex 
+ 1841  lt *tex
+ 1842  lt p*tex
+ 1843  enw pdefs.tex 
+ 1844  exit
+ 1845  cdvhbb 
+ 1846  lt
+ 1847  cd analysis_June21_eles_BGrav_total_SR_minitrees_inpb_wBR/
+ 1848  apy startGUI.py  TMVAOutput_250_450_biClass_2018May26_17-32.root 
+ 1849  cd ../
+ 1850  lt
+ 1851  cd -
+ 1852  py startGUI.py  TMVAOutput_250_450_biClass_2018May26_17-32.root 
+ 1853  cdmva 
+ 1854  cd /afs/cern.ch/user/r/rkamalie/workspace/private/July31/v2/CMSSW_8_0_25/src/VHbbAnalysis/Heppy/test/analysis_June21_eles_BG*
+ 1855  py startGUI.py  TMVAOutput_250_450_biClass_2018May26_17-32.root 
+ 1856  lt
+ 1857  cd dataset/plots/
+ 1858  lt
+ 1859  mkdir BDT_trees
+ 1860  mv BDT_*eps BDT_trees/
+ 1861  lt
+ 1862  cp -r BDT_trees/ ~/www/
+ 1863  cdwww
+ 1864  lt
+ 1865  cp index.php  BDT_trees/
+ 1866  exit
+ 1867  cdmva 
+ 1868  cd analysis_June21_eles_BGrav_total_SR_minitrees_inpb_wBR/
+ 1869  py startGUI.py  TMVAOutput_250_450_biClass_2018May26_17-32.root 
+ 1870  cd dataset/plots/
+ 1871  lt
+ 1872  mv BDT_*eps BDT_trees/
+ 1873  lt
+ 1874  cp -r BDT_trees/ ~/www/
+ 1875  cdwww
+ 1876  lt
+ 1877  exit
+ 1878  cdmva 
+ 1879  lt
+ 1880  cd analysis_June21_eles_BGrav_total_SR_minitrees_inpb_wBR/
+ 1881  lt
+ 1882  lt &py
+ 1883  lt *py
+ 1884  enw createHHMTforCom*
+ 1885  cat createHHMTforCombine_reader_v12_withMET_high.py
+ 1886  exit
+ 1887  cdmva 
+ 1888  lt
+ 1889  cd cd analysis_May25_eles_Radion_total_SR_minitrees_inpb_wBR/
+ 1890  lt
+ 1891  lt TM*
+ 1892  lt
+ 1893  lt TM*
+ 1894  lt *py
+ 1895  cp ~/workspace/private/masterCode/startGUI.py .
+ 1896  py startGUI.py TMVAOutput_250_450_biClass_2018May26_17-35.root 
+ 1897  cd ../
+ 1898  lt
+ 1899  cd analysis_June21_eles_BGrav_total_SR_minitrees_inpb_wBR/
+ 1900  lt *py
+ 1901  lt TM*
+ 1902  cd -
+ 1903  lt
+ 1904  cd -
+ 1905  lt TM*
+ 1906  cd ../analysis_May25_eles_Radion_total_SR_minitrees_inpb_wBR/
+ 1907  lt TM*
+ 1908  py startGUI.py TMVAOutput_250_450_biClass_2018May26_17-35.root 
+ 1909  py startGUI.py TMVAOutput_500_1000_biClass_2018May26_17-48.root 
+ 1910  py startGUI.py TMVAOutput_250_450_biClass_2018May26_17-35.root 
+ 1911  py startGUI.py TMVAOutput_500_1000_biClass_2018May26_17-48.root 
+ 1912  lt
+ 1913  cd dataset/
+ 1914  lt
+ 1915  cd plots/
+ 1916  lt
+ 1917  cd ../
+ 1918  py startGUI.py TMVAOutput_250_450_biClass_2018May26_17-35.root 
+ 1919  cd dataset/plots/
+ 1920  lt
+ 1921  mkdir radion_ee_250to500
+ 1922  cp * radion_ee_250to500/ 
+ 1923  lt radion_ee_250to500/
+ 1924  cd ../../
+ 1925  py startGUI.py TMVAOutput_500_1000_biClass_2018May26_17-48.root 
+ 1926  cd -
+ 1927  lt
+ 1928  mkdir radion_ee_500to1000
+ 1929  cp * radion_ee_500*/ 
+ 1930  lt
+ 1931  rm *png
+ 1932  rm *eps
+ 1933  lt radion_ee_500to1000/
+ 1934  lt
+ 1935  cp -r radion_ee_* ~/www/bdt_ee_radion
+ 1936  mkdir ~/www/bdt_ee_radion
+ 1937  cp -r radion_ee_* ~/www/bdt_ee_radion
+ 1938  cdwww
+ 1939  lt
+ 1940  cp index.php  bdt_ee_radion/
+ 1941  cp index.php  bdt_ee_radion/radion_ee_250to500/
+ 1942  cp index.php  bdt_ee_radion/radion_ee_500to1000/
+ 1943  cdmva 
+ 1944  lt
+ 1945  cd  analysis_May25_eles_Radion_total_SR_minitrees_inpb_wBR/
+ 1946  lt
+ 1947  cd dataset/plots/
+ 1948  lt
+ 1949  cd ../../
+ 1950  py startGUI.py TMVAOutput_500_1000_biClass_2018May26_17-48.root 
+ 1951  cd dataset/plots/
+ 1952  lt
+ 1953  cp cd radion_ee_500to1000
+ 1954  lt
+ 1955  rm *png
+ 1956  cd ../radion_ee_250to500/
+ 1957  rm *png
+ 1958  lt
+ 1959  cd ../
+ 1960  lt
+ 1961  cp * radion_ee_500to1000/
+ 1962  cp -r radion_ee_* ~/www/bdt_ee_radion/
+ 1963  pwd
+ 1964  cdwww
+ 1965  rm -rf bdt_ee_radion/
+ 1966  cd -
+ 1967  cp -r radion_ee_* ~/www/bdt_ee_radion/
+ 1968  cdwww
+ 1969  cd -
+ 1970  mkdir ~/www/bdt_ee_radion/
+ 1971  cp -r radion_ee_* ~/www/bdt_ee_radion/
+ 1972  cdwww
+ 1973  lt
+ 1974  cp index.php bdt_ee_radion/
+ 1975  cp index.php bdt_ee_radion/radion_ee_250to500/
+ 1976  cp index.php bdt_ee_radion/radion_ee_500to1000/
+ 1977  exit
+ 1978  enw /cvmfs/sft.cern.ch/lcg/views/setupViews.sh
+ 1979  cdmva 
+ 1980  lt setup*
+ 1981  enw setup_lxplus.sh 
+ 1982  cat setup_lxplus.sh 
+ 1983  cat /cvmfs/sft.cern.ch/lcg/views/LCG_88/x86_64-slc6-gcc49-opt/setup.sh
+ 1984  conda
+ 1985  pipenv
+ 1986  python3.6
+ 1987  cdtemp
+ 1988  python3.6
+ 1989  exit
+ 1990  python3.6
+ 1991  python3 -m pip install --user --upgrade pip
+ 1992  easy_install pip
+ 1993  python -m pip install --user --upgrade pip
+ 1994  pip install virtualenv
+ 1995  pip list
+ 1996  ls
+ 1997  lt
+ 1998  cd ~/workspace/private/
+ 1999  lt
+ 2000  enw ~/.bashrc
+ 2001  cdp
+ 2002  du -sh
+ 2003  mkdir Environments
+ 2004  cd Environments/
+ 2005  virtualenv egamma1
+ 2006  source /afs/cern.ch/work/r/rkamalie/public/Environments/egamma1/bin/activate
+ 2007  which python
+ 2008  which pip
+ 2009  pip list
+ 2010  pip install --upgrade pip
+ 2011  pip list
+ 2012  pip install numpy
+ 2013  pip install root_pandas
+ 2014  pip install fastparquet 
+ 2015  pip install feather-format
+ 2016  pip install progressbar2
+ 2017  pip install pandas pyarrow 
+ 2018  pip install seaborn matplotlib
+ 2019  pip install tensorflow
+ 2020  pip install sklearn keras
+ 2021  pip install h5py
+ 2022  pip install ROOT
+ 2023  pip install dask
+ 2024  pip list
+ 2025  pip freeze --local  > requirements.txt
+ 2026  cat requirements.txt 
+ 2027  deactivate 
+ 2028  which python
+ 2029  virtualenv -p /usr/bin/python3.6 egamma1
+ 2030  lt
+ 2031  pip list
+ 2032  source egamma1/bin/activate
+ 2033  pip list
+ 2034  deactivate 
+ 2035  history
+ 2036  virtualenv egamma1
+ 2037  source egamma1/bin/activatesource /afs/cern.ch/work/r/rkamalie/public/Environments/egamma1/bin/activate
+ 2038  source /afs/cern.ch/work/r/rkamalie/public/Environments/egamma1/bin/activate
+ 2039  pip list
+ 2040  virtualenv --list
+ 2041  which python
+ 2042  python --version
+ 2043  python
+ 2044  history > commands.txt
+ 2045  enw commands.txt 
+ 2046  pip list > used_packages.txt
+ 2047  enw used_packages.txt 
+ 2048  mv commands.txt history_commands.txt
+ 2049  lt
+ 2050  cp /afs/cern.ch/work/r/rkamalie/private/masterCode/skimAllSamples_v2.py .
+ 2051  which python
+ 2052  pip install conda
+ 2053  cat history_commands.txt 
+ 2054  pip freeze --local  > requirements.txt
+ 2055  cat requirements.txt 
+ 2056  lt
+ 2057  rm *~
+ 2058  lt
+ 2059  mc *txt egamma1/
+ 2060  mv *txt egamma1/
+ 2061  lt
+ 2062  mv * eg*
+ 2063  lt
+ 2064  lt egamma1/
+ 2065  cd egamma1/
+ 2066  l
+ 2067  lt
+ 2068  rm lib64/
+ 2069  rm -rg  lib64/
+ 2070  rm -rf  lib64/
+ 2071  lt
+ 2072  rm -rf bin/ include/ lib/
+ 2073  lt
+ 2074  rm lib64 
+ 2075  lt
+ 2076  cat  pip-selfcheck.json 
+ 2077  lt
+ 2078  rm pip-selfcheck.json 
+ 2079  lt
+ 2080  cd ../
+ 2081  lt
+ 2082  git init
+ 2083  git clone git@github.com:RemKamal/EGamma.git
+ 2084  lt
+ 2085  cd ega
+ 2086  cd egamma1/
+ 2087  mkdir EGammaML
+ 2088  cd ../EGamma/
+ 2089  lt
+ 2090  lt -a
+ 2091  cd .git
+ 2092  lt
+ 2093  cd ../
+ 2094  cd ./
+ 2095  cd ../
+ 2096  cd -
+ 2097  lt -a
+ 2098  lt .
+ 2099  rm -rf .git
+ 2100  lt
+ 2101  cd ../
+ 2102  lt
+ 2103  cp -r EGamma/* egamma1/EGammaML/
+ 2104  cd egamma1/EGammaML/
+ 2105  lt
+ 2106  lt -a
+ 2107  git init
+ 2108  git remote add origin git@github.com:RemKamal/EGammaML.git
+ 2109  git push -u origin master
+ 2110  lt
+ 2111  lt ../
+ 2112  mv ../*{txt,py}  .
+ 2113  lt
+ 2114  git remote add origin git@github.com:RemKamal/EGammaML.git
+ 2115  git push 
+ 2116  git add *
+ 2117  git status 
+ 2118  git commit -m "First commit"
+ 2119  git push -u origin master
+ 2120  py
+ 2121  python
+ 2122  python2.7
+ 2123  which python
+ 2124  /usr/bin/python
+ 2125  enw ~/.bashrc
+ 2126  lt /afs/cern.ch/project/eos/installation/
+ 2127  lt /afs/cern.ch/project/eos/installation/scripts/
+ 2128  lt /afs/cern.ch/project/eos/installation/scripts/bin/
+ 2129  lt /afs/cern.ch/project/eos/installation/
+ 2130  enw ~/.bashrc
+ 2131  lt /afs/cern.ch/project/eos/installation/scripts/etc/setup.sh
+ 2132  cat /afs/cern.ch/project/eos/installation/scripts/etc/setup.sh
+ 2133  enw /cvmfs/sft.cern.ch/lcg/views/LCG_94/x86_64-centos7-gcc8-opt/setup.sh
+ 2134  . /cvmfs/sft.cern.ch/lcg/app/releases/ROOT/6.16.00/x86_64-centos7-gcc48-opt/bin/thisroot.sh
+ 2135  python
+ 2136  enw /cvmfs/sft.cern.ch/lcg/app/releases/ROOT/6.16.00/x86_64-centos7-gcc48-opt/bin/thisroot.sh
+ 2137  /usr/bin/python
+ 2138  which python
+ 2139  /usr/bin/python
+ 2140  source /afs/cern.ch/work/r/rkamalie/public/Environments/egamma1/bin/activate
+ 2141  cd ../
+ 2142  lt
+ 2143  cd -
+ 2144  source /afs/cern.ch/work/r/rkamalie/public/Environments/EGamma/aaegamma1/bin/activate
+ 2145  deactivate 
+ 2146  lt
+ 2147  cd ../
+ 2148  lt
+ 2149  cd ../
+ 2150  lt
+ 2151  lt EGamma/
+ 2152  lt egamma1/EGammaML/
+ 2153  rm -rf EGamma/
+ 2154  lt
+ 2155  rm -rf .git/
+ 2156  cd egamma1/
+ 2157  lt
+ 2158  cd EGammaML/
+ 2159  lt
+ 2160  lt -a
+ 2161  enw history_commands.txt 
+ 2162  lt
+ 2163  lt ../
+ 2164  virtualenv egamma_1
+ 2165  virtualenv virtualenv_egamma_1
+ 2166  rm egamma_1/
+ 2167  rm -rf egamma_1/
+ 2168  source /afs/cern.ch/work/r/rkamalie/public/Environments/egamma1/EGammaML/virtualenv_egamma_1/bin/activate
+ 2169  pip list
+ 2170  pip install --upgrade pip
+ 2171  pip install -r requirements.txt 
+ 2172  pip list > requirements_2.txt 
+ 2173  diff requirements.txt  requirements_2.txt 
+ 2174  diff requirements.txt  requirements_2.txt | sdiff
+ 2175  diff requirements.txt  requirements_2.txt | sdiff color
+ 2176  sdiff requirements.txt  requirements_2.txt 
+ 2177  which python
+ 2178  python --version
+ 2179  /afs/cern.ch/work/r/rkamalie/public/Environments/egamma1/EGammaML/virtualenv_egamma_1/bin/python
+ 2180  lt
+ 2181  car requirements.txt 
+ 2182  cat requirements.txt 
+ 2183  cat requirements_2.txt 
+ 2184  sdiff requirements.txt  requirements_2.txt 
+ 2185  history > history_commands_2.txt 

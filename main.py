@@ -10,6 +10,7 @@ import time
 import numpy as np
 
 
+
 ## Gloval parameters
 fileLocation = '/eos/user/r/rkamalie/'
 

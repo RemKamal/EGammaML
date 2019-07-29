@@ -75,7 +75,8 @@ def readFilesIntoDataFrame(nameTemplate, numOfFiles):
                                                                                                                                                       
     Returns                                                                                                                                           
     -------                                                                                                                                           
-    - Final dataframe made of individual data files.                                                                                                                                          
+    - Final dataframe made of individual data files.                                                                                                 
+                                         
                                                                                                                                                       
     """
 
